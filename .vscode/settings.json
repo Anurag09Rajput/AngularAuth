@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/6d566657-942e-41b7-a20d-3bc72d253f81/resourceGroups/free-rg/providers/Microsoft.Web/sites/firstangularappdemo",
+    "appService.deploySubpath": "dist\\angularproject"
+}
