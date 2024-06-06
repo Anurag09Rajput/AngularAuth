@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { DemoComponent } from './demo/demo.component';
 import {
   SocialLoginModule,
   SocialAuthServiceConfig,
@@ -16,13 +15,17 @@ import {
 import {  GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DemoComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    DashboardComponent,
+    HomeComponent,
   ],
   imports: [
     FormsModule,
@@ -32,7 +35,8 @@ import { SignupComponent } from './components/signup/signup.component';
     MatFormFieldModule,
     MatInputModule,
     SocialLoginModule,
-    GoogleSigninButtonModule
+    GoogleSigninButtonModule,
+    HttpClientModule
   ],
   providers: [
     {
@@ -43,7 +47,7 @@ import { SignupComponent } from './components/signup/signup.component';
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              'clientId'
+              '950049450042-9f9t1tv17rpjvoqgfhlbb1stlbha1tpn.apps.googleusercontent.com'
             )
           }
         ],
