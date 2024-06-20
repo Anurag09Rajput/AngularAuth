@@ -25,7 +25,7 @@ export class LoginComponent {
       .post<ApiResponse<LoginUser>>(apiEndpoints.loginEndpoint, this.user)
       .subscribe((resp) => {
         if (resp.isSuccess) {
-          localStorage.setItem('token', JSON.stringify(resp.data));
+          localStorage.setItem('Bearer', JSON.stringify(resp.data));
           this.authService.sendAuthStateChangeNotification(resp.isSuccess);
           this.router.navigateByUrl('/dashboard');
         } else {

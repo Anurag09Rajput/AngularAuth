@@ -55,7 +55,7 @@ export class AuthenticationService {
       )
       .subscribe({
         next: (res) => {
-          localStorage.setItem('token', JSON.stringify(res.data));
+          localStorage.setItem('Bearer', JSON.stringify(res.data));
           this.sendAuthStateChangeNotification(res.isSuccess);
           return true;
         },

@@ -16,8 +16,10 @@ import {  GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { ErrorInterceptor } from './interceptors/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { HomeComponent } from './components/home/home.component';
     HttpClientModule
   ],
   providers: [
+    {provide: HTTP_INTERCEPTORS , useClass:AuthInterceptor , multi:true},
+    {provide:HTTP_INTERCEPTORS, useClass:ErrorInterceptor, multi:true},
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {

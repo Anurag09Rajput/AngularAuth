@@ -29,10 +29,12 @@
                 <button type="submit" class="btn-submit">Submit</button>
             </div>
         </form>
-        <asl-google-signin-button type='icon' size='medium'>Sign-in with Google</asl-google-signin-button>
-    </div>
-    <div>
-        <p>Already Registered</p>
-        <a [routerLink]="['','login']">Login</a>
+        <div>
+            <asl-google-signin-button type='icon' size='medium'>Sign-in with Google</asl-google-signin-button>
+            <div>
+                <span>Already Registered</span>
+                <a [routerLink]="['','login']">Login</a>
+            </div>
+        </div>
     </div>
 </div>
